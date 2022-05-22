@@ -25,18 +25,10 @@
                 }
             }
         }
-
-        function stopAudio(){
-            console.log("Attempting to stop audio")
-            if ("mediaSession" in navigator) {
-                navigator.mediaSession.stop()
-            }
-            
-        }
     </script>
 </head>
 <body>
- <header><img id="logo" src="logo.svg" alt="Radio"/></header>
+ <header><img id="logo" src="logo.svg" alt="Radio"/><button id="settings_button" onclick="#"><img src="overflow.svg"></button></header>
 
  <section id="grid_holder"></section>
  <footer id="footer">

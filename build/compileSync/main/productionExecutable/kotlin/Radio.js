@@ -143,11 +143,20 @@
           } else
             tmp1_safe_receiver_6.innerHTML = '' + station.title_1;
           var tmp2_safe_receiver_7 = websiteButton_5;
+          if (tmp2_safe_receiver_7 == null)
+            null;
+          else {
+            tmp2_safe_receiver_7.addEventListener('click', playStation$lambda_0(station));
+            Unit_getInstance();
+          }
+          Unit_getInstance();
+          var stopButton_11 = document.getElementById('stop_button');
+          var tmp3_safe_receiver_12 = stopButton_11;
           var tmp_0;
-          if (tmp2_safe_receiver_7 == null) {
+          if (tmp3_safe_receiver_12 == null) {
             tmp_0 = null;
           } else {
-            tmp2_safe_receiver_7.addEventListener('click', playStation$lambda_0(station));
+            tmp3_safe_receiver_12.addEventListener('click', playStation$lambda_1(controls_3));
             tmp_0 = Unit_getInstance();
           }
           tmp$ret$0 = tmp_0;
@@ -557,6 +566,21 @@
         null;
       else {
         tmp1_safe_receiver_9.focus();
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      return Unit_getInstance();
+    };
+  }
+  function playStation$lambda_1($controls_3) {
+    return function (it) {
+      _get_audio__3100431035().pause();
+      _get_audio__3100431035().src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
+      var tmp0_safe_receiver_14 = $controls_3;
+      if (tmp0_safe_receiver_14 == null)
+        null;
+      else {
+        tmp0_safe_receiver_14.setAttribute('style', 'display: none;');
         Unit_getInstance();
       }
       Unit_getInstance();
