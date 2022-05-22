@@ -127,13 +127,27 @@
           var tmp = _get_audio__3100431035().play();
           tmp.then(playStation$lambda(station));
           Unit_getInstance();
-          var controlsLayout_3 = document.getElementById('controls');
-          var tmp0_safe_receiver_4 = controlsLayout_3;
+          var controls_3 = document.getElementById('footer');
+          var tmp0_safe_receiver_4 = controls_3;
+          if (tmp0_safe_receiver_4 == null)
+            null;
+          else {
+            tmp0_safe_receiver_4.setAttribute('style', 'display: block;');
+            Unit_getInstance();
+          }
+          Unit_getInstance();
+          var websiteButton_5 = document.getElementById('website_button');
+          var tmp1_safe_receiver_6 = websiteButton_5;
+          if (tmp1_safe_receiver_6 == null) {
+            Unit_getInstance();
+          } else
+            tmp1_safe_receiver_6.innerHTML = '' + station.title_1;
+          var tmp2_safe_receiver_7 = websiteButton_5;
           var tmp_0;
-          if (tmp0_safe_receiver_4 == null) {
+          if (tmp2_safe_receiver_7 == null) {
             tmp_0 = null;
           } else {
-            tmp0_safe_receiver_4.setAttribute('style', 'display: block;');
+            tmp2_safe_receiver_7.addEventListener('click', playStation$lambda_0(station));
             tmp_0 = Unit_getInstance();
           }
           tmp$ret$0 = tmp_0;
@@ -531,6 +545,21 @@
   function playStation$lambda($station) {
     return function (it) {
       setMetadata($station.title_1, $station.logoUrl_1);
+      return Unit_getInstance();
+    };
+  }
+  function playStation$lambda_0($station) {
+    return function (it) {
+      var tmp = window;
+      var tmp0_elvis_lhs_10 = $station.website_1;
+      var tmp1_safe_receiver_9 = tmp.open(tmp0_elvis_lhs_10 == null ? '' : tmp0_elvis_lhs_10, '_blank');
+      if (tmp1_safe_receiver_9 == null)
+        null;
+      else {
+        tmp1_safe_receiver_9.focus();
+        Unit_getInstance();
+      }
+      Unit_getInstance();
       return Unit_getInstance();
     };
   }

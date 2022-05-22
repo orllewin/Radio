@@ -1,5 +1,6 @@
 body{
     background: #f5f2f0;
+    font-family: monospace;
 }
 
 header{
@@ -18,6 +19,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1em;
+    padding-bottom: 65px;
 }
 
 .station {
@@ -31,6 +33,51 @@ section {
     float: left;
 }
 
+footer{
+    display: none;
+}
+
+#controls{
+    display: block;
+    position: fixed;
+    background: #ffeeee;
+    padding: 12px;
+    bottom:0px;
+    right:0px;
+}
+
+.control_button {
+    background-color: rgb(234, 129, 175);
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.left .right{
+    margin: 0px;
+}
+
+.left:hover {
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    background-color: rgb(130, 169, 133);
+}
+
+.right:hover {
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    background-color: rgb(185, 93, 93);
+}
+
+.website_button{
+    background: rgb(130, 123, 123);
+}
 @media (orientation: portrait) {
     section {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -40,12 +87,28 @@ section {
         padding-top: 48px;
         padding-bottom: 48px;
     }
-}
 
-#controls{
-    display: none;
-    position: fixed;
-    background: #ffeeee;
-    bottom:0px;
-    right:0px;
+    #controls{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: unset;
+    }
+
+    .control_button{
+        flex-grow: 1;
+        padding: 12px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+
+    .left{
+        margin-left: 12px;
+        margin-right: 6px;
+    }
+
+    .right{
+        margin-left: 6px;
+        margin-right: 12px;
+    }
 }

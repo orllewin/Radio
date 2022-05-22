@@ -1,0 +1,31 @@
+{
+  "background_color": "#f5f2f0",
+  "description": "a radio app",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Radio",
+  "start_url": "https://orllewin.github.io/radio2/",
+  "orientation": "portrait",
+  "short_name": "Radio",
+  "theme_color": "#f5f2f0",
+  "categories": [],
+  "screenshots": [],
+  "shortcuts": [],
+  "icons": [
+    {
+      "src": "./webapp/radio_svg.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "./webapp/radio_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./webapp/radio_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

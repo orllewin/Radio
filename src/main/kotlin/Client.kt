@@ -7,9 +7,6 @@ import org.w3c.xhr.XMLHttpRequest
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
 import org.w3c.dom.Audio
-import org.w3c.dom.AudioTrack
-import org.w3c.dom.get
-import org.w3c.dom.mediacapture.MediaStreamConstraints
 
 val audio = Audio()
 
@@ -61,17 +58,33 @@ fun playStation(station: Station) {
     station.streamUrl?.let { url ->
         println("Play station ${station.streamUrl}")
 
+        //Play stream
         audio.src = url
         audio.play().then {
             setMetadata(station.title, station.logoUrl)
         }
 
-        val controlsLayout = document.getElementById("controls")
-        controlsLayout?.setAttribute("style", "display: block;")
+        //Update ui
+        val controls = document.getElementById("footer")
+        controls?.setAttribute("style", "display: block;")
+
+        val websiteButton = document.getElementById("website_button")
+        websiteButton?.innerHTML = "${station.title}"
+        websiteButton?.addEventListener("click", {
+            window.open(station.website ?: "", "_blank")?.focus()
+        })
+
+        val stopButton = document.getElementById("stop_button")
+        stopButton?.addEventListener("click", {
+            audio.pause()
+            audio.src = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA="
+            controls?.setAttribute("style", "display: none;")
+        })
     }
 }
 
 external fun setMetadata(stationTitle: Any?, imageUrl: Any?): Unit
+external fun stopAudio()
 
 fun getFeed(url: String, onFeed: (String) -> Unit) {
     val xmlHttp = XMLHttpRequest()

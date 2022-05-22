@@ -25,7 +25,7 @@
   var getKClass = kotlin_kotlin.$crossModule$.getKClass;
   var arrayOf = kotlin_kotlin.$crossModule$.arrayOf;
   var createKType = kotlin_kotlin.$crossModule$.createKType;
-  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.serializer_1;
+  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.serializer_5;
   var THROW_CCE = kotlin_kotlin.$crossModule$.THROW_CCE;
   var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.KSerializer;
   var isInterface = kotlin_kotlin.$crossModule$.isInterface;
@@ -127,13 +127,36 @@
           var tmp = _get_audio__3100431035().play();
           tmp.then(playStation$lambda(station));
           Unit_getInstance();
-          var controlsLayout_3 = document.getElementById('controls');
-          var tmp0_safe_receiver_4 = controlsLayout_3;
+          var controls_3 = document.getElementById('footer');
+          var tmp0_safe_receiver_4 = controls_3;
+          if (tmp0_safe_receiver_4 == null)
+            null;
+          else {
+            tmp0_safe_receiver_4.setAttribute('style', 'display: block;');
+            Unit_getInstance();
+          }
+          Unit_getInstance();
+          var websiteButton_5 = document.getElementById('website_button');
+          var tmp1_safe_receiver_6 = websiteButton_5;
+          if (tmp1_safe_receiver_6 == null) {
+            Unit_getInstance();
+          } else
+            tmp1_safe_receiver_6.innerHTML = '' + station.title_1;
+          var tmp2_safe_receiver_7 = websiteButton_5;
+          if (tmp2_safe_receiver_7 == null)
+            null;
+          else {
+            tmp2_safe_receiver_7.addEventListener('click', playStation$lambda_0(station));
+            Unit_getInstance();
+          }
+          Unit_getInstance();
+          var stopButton_11 = document.getElementById('stop_button');
+          var tmp3_safe_receiver_12 = stopButton_11;
           var tmp_0;
-          if (tmp0_safe_receiver_4 == null) {
+          if (tmp3_safe_receiver_12 == null) {
             tmp_0 = null;
           } else {
-            tmp0_safe_receiver_4.setAttribute('style', 'display: block;');
+            tmp3_safe_receiver_12.addEventListener('click', playStation$lambda_1(controls_3));
             tmp_0 = Unit_getInstance();
           }
           tmp$ret$0 = tmp_0;
@@ -155,6 +178,9 @@
   function Companion() {
     Companion_instance = this;
   }
+  Companion.prototype.serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance();
+  };
   Companion.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
@@ -222,6 +248,15 @@
     tmp5_input.endStructure_e64gd4_k$(tmp0_desc);
     return Stations_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
+  $serializer.prototype.serialize_meargo_k$ = function (encoder, value) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_output = encoder.beginStructure_dv3yt3_k$(tmp0_desc);
+    tmp1_output.encodeSerializableElement_pr92am_k$(tmp0_desc, 0, new ArrayListSerializer($serializer_getInstance_0()), value.defaultStations_1);
+    tmp1_output.endStructure_e64gd4_k$(tmp0_desc);
+  };
+  $serializer.prototype.serialize_32qylj_k$ = function (encoder, value) {
+    return this.serialize_meargo_k$(encoder, value instanceof Stations ? value : THROW_CCE());
+  };
   $serializer.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -246,6 +281,20 @@
     Companion_getInstance();
     this.defaultStations_1 = defaultStations;
   }
+  Stations.prototype._get_defaultStations__2047552753_xv25td_k$ = function () {
+    return this.defaultStations_1;
+  };
+  Stations.prototype.component1_7eebsc_k$ = function () {
+    return this.defaultStations_1;
+  };
+  Stations.prototype.copy_mch1rg_k$ = function (defaultStations) {
+    return new Stations(defaultStations);
+  };
+  Stations.prototype.copy$default_jhmxzw_k$ = function (defaultStations, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      defaultStations = this.defaultStations_1;
+    return this.copy_mch1rg_k$(defaultStations);
+  };
   Stations.prototype.toString = function () {
     return 'Stations(defaultStations=' + this.defaultStations_1 + ')';
   };
@@ -270,6 +319,23 @@
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance}
   };
+  function Companion_0() {
+    Companion_instance_0 = this;
+  }
+  Companion_0.prototype.serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_0();
+  };
+  Companion_0.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_0;
+  function Companion_getInstance_0() {
+    if (Companion_instance_0 == null)
+      new Companion_0();
+    return Companion_instance_0;
+  }
   function $serializer_0() {
     $serializer_instance_0 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('Station', this, 4);
@@ -350,6 +416,18 @@
     tmp8_input.endStructure_e64gd4_k$(tmp0_desc);
     return Station_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
+  $serializer_0.prototype.serialize_av9ftz_k$ = function (encoder, value) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_output = encoder.beginStructure_dv3yt3_k$(tmp0_desc);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 0, StringSerializer_getInstance(), value.title_1);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 1, StringSerializer_getInstance(), value.website_1);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 2, StringSerializer_getInstance(), value.streamUrl_1);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 3, StringSerializer_getInstance(), value.logoUrl_1);
+    tmp1_output.endStructure_e64gd4_k$(tmp0_desc);
+  };
+  $serializer_0.prototype.serialize_32qylj_k$ = function (encoder, value) {
+    return this.serialize_av9ftz_k$(encoder, value instanceof Station ? value : THROW_CCE());
+  };
   $serializer_0.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -373,8 +451,51 @@
   function Station_init_$Create$(seen1, title, website, streamUrl, logoUrl, serializationConstructorMarker) {
     return Station_init_$Init$(seen1, title, website, streamUrl, logoUrl, serializationConstructorMarker, Object.create(Station.prototype));
   }
-  function Station() {
+  function Station(title, website, streamUrl, logoUrl) {
+    Companion_getInstance_0();
+    this.title_1 = title;
+    this.website_1 = website;
+    this.streamUrl_1 = streamUrl;
+    this.logoUrl_1 = logoUrl;
   }
+  Station.prototype._get_title__3633781881_axnhxj_k$ = function () {
+    return this.title_1;
+  };
+  Station.prototype._get_website__1425706454_nktu52_k$ = function () {
+    return this.website_1;
+  };
+  Station.prototype._get_streamUrl__1792466530_tn6s0y_k$ = function () {
+    return this.streamUrl_1;
+  };
+  Station.prototype._get_logoUrl__4153585613_2c6asz_k$ = function () {
+    return this.logoUrl_1;
+  };
+  Station.prototype.component1_7eebsc_k$ = function () {
+    return this.title_1;
+  };
+  Station.prototype.component2_7eebsb_k$ = function () {
+    return this.website_1;
+  };
+  Station.prototype.component3_7eebsa_k$ = function () {
+    return this.streamUrl_1;
+  };
+  Station.prototype.component4_7eebs9_k$ = function () {
+    return this.logoUrl_1;
+  };
+  Station.prototype.copy_jfzqx7_k$ = function (title, website, streamUrl, logoUrl) {
+    return new Station(title, website, streamUrl, logoUrl);
+  };
+  Station.prototype.copy$default_12ote8_k$ = function (title, website, streamUrl, logoUrl, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      title = this.title_1;
+    if (!(($mask0 & 2) === 0))
+      website = this.website_1;
+    if (!(($mask0 & 4) === 0))
+      streamUrl = this.streamUrl_1;
+    if (!(($mask0 & 8) === 0))
+      logoUrl = this.logoUrl_1;
+    return this.copy_jfzqx7_k$(title, website, streamUrl, logoUrl);
+  };
   Station.prototype.toString = function () {
     return 'Station(title=' + this.title_1 + ', website=' + this.website_1 + ', streamUrl=' + this.streamUrl_1 + ', logoUrl=' + this.logoUrl_1 + ')';
   };
@@ -409,6 +530,10 @@
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance_0}
   };
+  function _get_JS_METADATA__4025708748() {
+    return JS_METADATA;
+  }
+  var JS_METADATA;
   function main$lambda$lambda() {
     return function (rawFeed) {
       addStations(rawFeed);
@@ -534,6 +659,36 @@
       return Unit_getInstance();
     };
   }
+  function playStation$lambda_0($station) {
+    return function (it) {
+      var tmp = window;
+      var tmp0_elvis_lhs_10 = $station.website_1;
+      var tmp1_safe_receiver_9 = tmp.open(tmp0_elvis_lhs_10 == null ? '' : tmp0_elvis_lhs_10, '_blank');
+      if (tmp1_safe_receiver_9 == null)
+        null;
+      else {
+        tmp1_safe_receiver_9.focus();
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      return Unit_getInstance();
+    };
+  }
+  function playStation$lambda_1($controls_3) {
+    return function (it) {
+      _get_audio__3100431035().pause();
+      _get_audio__3100431035().src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
+      var tmp0_safe_receiver_14 = $controls_3;
+      if (tmp0_safe_receiver_14 == null)
+        null;
+      else {
+        tmp0_safe_receiver_14.setAttribute('style', 'display: none;');
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      return Unit_getInstance();
+    };
+  }
   function getFeed$lambda($xmlHttp, $onFeed) {
     return function (it) {
       var tmp;
@@ -553,6 +708,9 @@
   //region block: post-declaration
   $serializer.prototype.typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   $serializer_0.prototype.typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
+  //endregion
+  //region block: init
+  JS_METADATA = "if (\"mediaSession\" in navigator) {\n                navigator.mediaSession.metadata = new MediaMetadata({\n                    title: %%title,\n                    artwork: [\n                      { src: %%arturl, sizes: '96x96',   type: 'image/png' },\n                      { src: %%arturl, sizes: '128x128', type: 'image/png' },\n                      { src: %%arturl, sizes: '192x192', type: 'image/png' },\n                      { src: %%arturl, sizes: '256x256', type: 'image/png' },\n                      { src: %%arturl, sizes: '384x384', type: 'image/png' },\n                      { src: %%arturl, sizes: '512x512', type: 'image/png' },\n                    ]\n                });\n            }";
   //endregion
   main();
   return _;
