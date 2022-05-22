@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Radio-1.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="Radio-1.0-SNAPSHOT.jar">
+      <element id="module-output" name="Radio.main" />
+    </root>
+  </artifact>
+</component>

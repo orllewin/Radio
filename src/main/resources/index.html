@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio</title>
+    <link href="style.css" rel="stylesheet" />
+    <script>
+        function setMetadata(stationTitle, imageUrl) {
+        console.log("Attempting to set media metadata: " + stationTitle + ": " + imageUrl)
+            if ("mediaSession" in navigator) {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: stationTitle,
+                    artwork: [
+                      { src: imageUrl, sizes: '96x96',   type: 'image/png' },
+                      { src: imageUrl, sizes: '128x128', type: 'image/png' },
+                      { src: imageUrl, sizes: '192x192', type: 'image/png' },
+                      { src: imageUrl, sizes: '256x256', type: 'image/png' },
+                      { src: imageUrl, sizes: '384x384', type: 'image/png' },
+                      { src: imageUrl, sizes: '512x512', type: 'image/png' },
+                    ]
+                });
+            }
+        }
+
+    </script>
+</head>
+<body>
+ <header><img id="logo" src="logo.svg" alt="Radio"/></header>
+
+ <section id="grid_holder"></section>
+ <div id="controls">
+     <span id="now_playing"></span>  <button class="stop_button" onclick="stop()">■ Stop</button>
+ </div>
+<script src="Radio.js"></script>
+</body>
+</html>

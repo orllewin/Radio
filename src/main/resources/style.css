@@ -1,0 +1,51 @@
+body{
+    background: #f5f2f0;
+}
+
+header{
+    display: flex;
+    height: 110px;
+    align-items: center;
+    padding-left: 12px;
+}
+
+#logo {
+    height: 22px;
+}
+
+section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1em;
+}
+
+.station {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    color: #1d1d1d;
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 12px;
+    float: left;
+}
+
+@media (orientation: portrait) {
+    section {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .station {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+#controls{
+    display: none;
+    position: fixed;
+    background: #ffeeee;
+    bottom:0px;
+    right:0px;
+}
