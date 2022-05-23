@@ -25,7 +25,7 @@
   var getKClass = kotlin_kotlin.$crossModule$.getKClass;
   var arrayOf = kotlin_kotlin.$crossModule$.arrayOf;
   var createKType = kotlin_kotlin.$crossModule$.createKType;
-  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.serializer_5;
+  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.serializer_1;
   var THROW_CCE = kotlin_kotlin.$crossModule$.THROW_CCE;
   var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.KSerializer;
   var isInterface = kotlin_kotlin.$crossModule$.isInterface;
@@ -94,7 +94,7 @@
     var stations = tmp$ret$2;
     var gridHolder = document.getElementById('grid_holder');
     {
-      var tmp1_forEach_0 = stations.defaultStations_1;
+      var tmp1_forEach_0 = stations.stations_1;
       var tmp0_iterator_1 = tmp1_forEach_0.iterator_jk1svi_k$();
       while (tmp0_iterator_1.hasNext_bitz1p_k$()) {
         var element_2 = tmp0_iterator_1.next_20eer_k$();
@@ -116,54 +116,83 @@
     if (tmp0_safe_receiver == null)
       null;
     else {
-      var tmp$ret$1;
-      $l$block_0: {
+      var tmp$ret$3;
+      $l$block_2: {
         {
         }
-        var tmp$ret$0;
-        $l$block: {
+        var tmp$ret$2;
+        $l$block_1: {
           println('Play station ' + station.streamUrl_1);
           _get_audio__3100431035().src = tmp0_safe_receiver;
           var tmp = _get_audio__3100431035().play();
           tmp.then(playStation$lambda(station));
           Unit_getInstance();
-          var controls_3 = document.getElementById('footer');
+          var controls_3 = document.getElementById('controls');
           var tmp0_safe_receiver_4 = controls_3;
           if (tmp0_safe_receiver_4 == null)
             null;
           else {
-            tmp0_safe_receiver_4.setAttribute('style', 'display: block;');
+            tmp0_safe_receiver_4.setAttribute('style', 'visibility: visible;');
             Unit_getInstance();
           }
           Unit_getInstance();
-          var websiteButton_5 = document.getElementById('website_button');
-          var tmp1_safe_receiver_6 = websiteButton_5;
-          if (tmp1_safe_receiver_6 == null) {
+          var tmp_0 = document.getElementById('now_playing_icon');
+          var nowPlayingIcon_5 = tmp_0 instanceof HTMLImageElement ? tmp_0 : THROW_CCE();
+          var tmp1_safe_receiver_7 = station.logoUrl_1;
+          var tmp_1;
+          if (tmp1_safe_receiver_7 == null) {
+            tmp_1 = null;
+          } else {
+            var tmp$ret$0;
+            $l$block: {
+              {
+              }
+              nowPlayingIcon_5.setAttribute('style', 'visibility: block;');
+              tmp$ret$0 = nowPlayingIcon_5.src = tmp1_safe_receiver_7;
+              break $l$block;
+            }
+            tmp_1 = Unit_getInstance();
+          }
+          var tmp2_elvis_lhs_6 = tmp_1;
+          if (tmp2_elvis_lhs_6 == null) {
+            var tmp$ret$1;
+            $l$block_0: {
+              {
+              }
+              tmp$ret$1 = nowPlayingIcon_5.setAttribute('style', 'visibility: hidden;');
+              break $l$block_0;
+            }
+          } else {
+            Unit_getInstance();
+          }
+          var websiteButton_8 = document.getElementById('website_button');
+          var tmp3_safe_receiver_9 = websiteButton_8;
+          if (tmp3_safe_receiver_9 == null) {
             Unit_getInstance();
           } else
-            tmp1_safe_receiver_6.innerHTML = '' + station.title_1;
-          var tmp2_safe_receiver_7 = websiteButton_5;
-          if (tmp2_safe_receiver_7 == null)
+            tmp3_safe_receiver_9.innerHTML = '' + station.title_1;
+          var tmp4_safe_receiver_10 = websiteButton_8;
+          if (tmp4_safe_receiver_10 == null)
             null;
           else {
-            tmp2_safe_receiver_7.addEventListener('click', playStation$lambda_0(station));
+            tmp4_safe_receiver_10.addEventListener('click', playStation$lambda_0(station));
             Unit_getInstance();
           }
           Unit_getInstance();
-          var stopButton_11 = document.getElementById('stop_button');
-          var tmp3_safe_receiver_12 = stopButton_11;
-          var tmp_0;
-          if (tmp3_safe_receiver_12 == null) {
-            tmp_0 = null;
+          var stopButton_14 = document.getElementById('stop_button');
+          var tmp5_safe_receiver_15 = stopButton_14;
+          var tmp_2;
+          if (tmp5_safe_receiver_15 == null) {
+            tmp_2 = null;
           } else {
-            tmp3_safe_receiver_12.addEventListener('click', playStation$lambda_1(controls_3));
-            tmp_0 = Unit_getInstance();
+            tmp5_safe_receiver_15.addEventListener('click', playStation$lambda_1(controls_3));
+            tmp_2 = Unit_getInstance();
           }
-          tmp$ret$0 = tmp_0;
-          break $l$block;
+          tmp$ret$2 = tmp_2;
+          break $l$block_1;
         }
-        tmp$ret$1 = tmp$ret$0;
-        break $l$block_0;
+        tmp$ret$3 = tmp$ret$2;
+        break $l$block_2;
       }
     }
     Unit_getInstance();
@@ -178,9 +207,6 @@
   function Companion() {
     Companion_instance = this;
   }
-  Companion.prototype.serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance();
-  };
   Companion.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
@@ -195,7 +221,7 @@
   function $serializer() {
     $serializer_instance = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('Stations', this, 1);
-    tmp0_serialDesc.addElement_ifop3j_k$('defaultStations', false);
+    tmp0_serialDesc.addElement_ifop3j_k$('stations', false);
     this.descriptor_1 = tmp0_serialDesc;
   }
   $serializer.prototype._get_descriptor__684124924_bbb664_k$ = function () {
@@ -248,15 +274,6 @@
     tmp5_input.endStructure_e64gd4_k$(tmp0_desc);
     return Stations_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
-  $serializer.prototype.serialize_meargo_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_dv3yt3_k$(tmp0_desc);
-    tmp1_output.encodeSerializableElement_pr92am_k$(tmp0_desc, 0, new ArrayListSerializer($serializer_getInstance_0()), value.defaultStations_1);
-    tmp1_output.endStructure_e64gd4_k$(tmp0_desc);
-  };
-  $serializer.prototype.serialize_32qylj_k$ = function (encoder, value) {
-    return this.serialize_meargo_k$(encoder, value instanceof Stations ? value : THROW_CCE());
-  };
   $serializer.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -268,38 +285,24 @@
       new $serializer();
     return $serializer_instance;
   }
-  function Stations_init_$Init$(seen1, defaultStations, serializationConstructorMarker, $this) {
+  function Stations_init_$Init$(seen1, stations, serializationConstructorMarker, $this) {
     if (!(1 === (1 & seen1)))
       throwMissingFieldException(seen1, 1, $serializer_getInstance().descriptor_1);
-    $this.defaultStations_1 = defaultStations;
+    $this.stations_1 = stations;
     return $this;
   }
-  function Stations_init_$Create$(seen1, defaultStations, serializationConstructorMarker) {
-    return Stations_init_$Init$(seen1, defaultStations, serializationConstructorMarker, Object.create(Stations.prototype));
+  function Stations_init_$Create$(seen1, stations, serializationConstructorMarker) {
+    return Stations_init_$Init$(seen1, stations, serializationConstructorMarker, Object.create(Stations.prototype));
   }
-  function Stations(defaultStations) {
+  function Stations(stations) {
     Companion_getInstance();
-    this.defaultStations_1 = defaultStations;
+    this.stations_1 = stations;
   }
-  Stations.prototype._get_defaultStations__2047552753_xv25td_k$ = function () {
-    return this.defaultStations_1;
-  };
-  Stations.prototype.component1_7eebsc_k$ = function () {
-    return this.defaultStations_1;
-  };
-  Stations.prototype.copy_mch1rg_k$ = function (defaultStations) {
-    return new Stations(defaultStations);
-  };
-  Stations.prototype.copy$default_jhmxzw_k$ = function (defaultStations, $mask0, $handler) {
-    if (!(($mask0 & 1) === 0))
-      defaultStations = this.defaultStations_1;
-    return this.copy_mch1rg_k$(defaultStations);
-  };
   Stations.prototype.toString = function () {
-    return 'Stations(defaultStations=' + this.defaultStations_1 + ')';
+    return 'Stations(stations=' + this.stations_1 + ')';
   };
   Stations.prototype.hashCode = function () {
-    return hashCode(this.defaultStations_1);
+    return hashCode(this.stations_1);
   };
   Stations.prototype.equals = function (other) {
     if (this === other)
@@ -309,7 +312,7 @@
     else {
     }
     var tmp0_other_with_cast = other instanceof Stations ? other : THROW_CCE();
-    if (!equals(this.defaultStations_1, tmp0_other_with_cast.defaultStations_1))
+    if (!equals(this.stations_1, tmp0_other_with_cast.stations_1))
       return false;
     return true;
   };
@@ -319,23 +322,6 @@
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance}
   };
-  function Companion_0() {
-    Companion_instance_0 = this;
-  }
-  Companion_0.prototype.serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_0();
-  };
-  Companion_0.$metadata$ = {
-    simpleName: 'Companion',
-    kind: 'object',
-    interfaces: []
-  };
-  var Companion_instance_0;
-  function Companion_getInstance_0() {
-    if (Companion_instance_0 == null)
-      new Companion_0();
-    return Companion_instance_0;
-  }
   function $serializer_0() {
     $serializer_instance_0 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('Station', this, 4);
@@ -416,18 +402,6 @@
     tmp8_input.endStructure_e64gd4_k$(tmp0_desc);
     return Station_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
-  $serializer_0.prototype.serialize_av9ftz_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_dv3yt3_k$(tmp0_desc);
-    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 0, StringSerializer_getInstance(), value.title_1);
-    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 1, StringSerializer_getInstance(), value.website_1);
-    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 2, StringSerializer_getInstance(), value.streamUrl_1);
-    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 3, StringSerializer_getInstance(), value.logoUrl_1);
-    tmp1_output.endStructure_e64gd4_k$(tmp0_desc);
-  };
-  $serializer_0.prototype.serialize_32qylj_k$ = function (encoder, value) {
-    return this.serialize_av9ftz_k$(encoder, value instanceof Station ? value : THROW_CCE());
-  };
   $serializer_0.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -451,51 +425,8 @@
   function Station_init_$Create$(seen1, title, website, streamUrl, logoUrl, serializationConstructorMarker) {
     return Station_init_$Init$(seen1, title, website, streamUrl, logoUrl, serializationConstructorMarker, Object.create(Station.prototype));
   }
-  function Station(title, website, streamUrl, logoUrl) {
-    Companion_getInstance_0();
-    this.title_1 = title;
-    this.website_1 = website;
-    this.streamUrl_1 = streamUrl;
-    this.logoUrl_1 = logoUrl;
+  function Station() {
   }
-  Station.prototype._get_title__3633781881_axnhxj_k$ = function () {
-    return this.title_1;
-  };
-  Station.prototype._get_website__1425706454_nktu52_k$ = function () {
-    return this.website_1;
-  };
-  Station.prototype._get_streamUrl__1792466530_tn6s0y_k$ = function () {
-    return this.streamUrl_1;
-  };
-  Station.prototype._get_logoUrl__4153585613_2c6asz_k$ = function () {
-    return this.logoUrl_1;
-  };
-  Station.prototype.component1_7eebsc_k$ = function () {
-    return this.title_1;
-  };
-  Station.prototype.component2_7eebsb_k$ = function () {
-    return this.website_1;
-  };
-  Station.prototype.component3_7eebsa_k$ = function () {
-    return this.streamUrl_1;
-  };
-  Station.prototype.component4_7eebs9_k$ = function () {
-    return this.logoUrl_1;
-  };
-  Station.prototype.copy_jfzqx7_k$ = function (title, website, streamUrl, logoUrl) {
-    return new Station(title, website, streamUrl, logoUrl);
-  };
-  Station.prototype.copy$default_12ote8_k$ = function (title, website, streamUrl, logoUrl, $mask0, $handler) {
-    if (!(($mask0 & 1) === 0))
-      title = this.title_1;
-    if (!(($mask0 & 2) === 0))
-      website = this.website_1;
-    if (!(($mask0 & 4) === 0))
-      streamUrl = this.streamUrl_1;
-    if (!(($mask0 & 8) === 0))
-      logoUrl = this.logoUrl_1;
-    return this.copy_jfzqx7_k$(title, website, streamUrl, logoUrl);
-  };
   Station.prototype.toString = function () {
     return 'Station(title=' + this.title_1 + ', website=' + this.website_1 + ', streamUrl=' + this.streamUrl_1 + ', logoUrl=' + this.logoUrl_1 + ')';
   };
@@ -530,17 +461,97 @@
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance_0}
   };
-  function _get_JS_METADATA__4025708748() {
-    return JS_METADATA;
+  function main$lambda$lambda($backButton, $settingsLayout, $settingsButton, $urlTextArea) {
+    return function (it) {
+      var tmp0_safe_receiver = $backButton;
+      if (tmp0_safe_receiver == null)
+        null;
+      else {
+        tmp0_safe_receiver.setAttribute('style', 'display: block;');
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      var tmp1_safe_receiver = $settingsLayout;
+      if (tmp1_safe_receiver == null)
+        null;
+      else {
+        tmp1_safe_receiver.setAttribute('style', 'visibility: visible;');
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      $settingsButton.setAttribute('style', 'display: none;');
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp0_get_0 = window.localStorage;
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = tmp0_get_0;
+          break $l$block;
+        }
+        tmp$ret$1 = tmp$ret$0['feed_url_override'];
+        break $l$block_0;
+      }
+      var tmp2_safe_receiver = tmp$ret$1;
+      if (tmp2_safe_receiver == null)
+        null;
+      else {
+        var tmp$ret$2;
+        $l$block_1: {
+          {
+          }
+          tmp$ret$2 = $urlTextArea.value = tmp2_safe_receiver;
+          break $l$block_1;
+        }
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      return Unit_getInstance();
+    };
   }
-  var JS_METADATA;
-  function main$lambda$lambda() {
+  function main$lambda$lambda_0($urlTextArea) {
+    return function (it) {
+      var urlOverride = $urlTextArea.value;
+      Unit_getInstance();
+      var overrideUrl = new URL(urlOverride);
+      Unit_getInstance();
+      println('Url override: ' + urlOverride + ' protocol: ' + overrideUrl.protocol);
+      var tmp;
+      if (!(overrideUrl.protocol === 'https:')) {
+        return Unit_getInstance();
+      }
+      window.localStorage.setItem('feed_url_override', urlOverride);
+      return Unit_getInstance();
+    };
+  }
+  function main$lambda$lambda_1($backButton, $settingsLayout, $settingsButton) {
+    return function (it) {
+      $backButton.setAttribute('style', 'display: none;');
+      var tmp0_safe_receiver = $settingsLayout;
+      if (tmp0_safe_receiver == null)
+        null;
+      else {
+        tmp0_safe_receiver.setAttribute('style', 'visibility: hidden;');
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      var tmp1_safe_receiver = $settingsButton;
+      if (tmp1_safe_receiver == null)
+        null;
+      else {
+        tmp1_safe_receiver.setAttribute('style', 'display: block;');
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      return Unit_getInstance();
+    };
+  }
+  function main$lambda$lambda_2() {
     return function (rawFeed) {
       addStations(rawFeed);
       return Unit_getInstance();
     };
   }
-  function main$lambda$lambda_0() {
+  function main$lambda$lambda_3() {
     return function (rawFeed) {
       addStations(rawFeed);
       return Unit_getInstance();
@@ -569,22 +580,69 @@
         tmp = tmp$ret$1;
       } else {
         {
-          tmp = '';
+          var tmp$ret$3;
+          $l$block_2: {
+            var tmp3_get_0 = window.localStorage;
+            var tmp$ret$2;
+            $l$block_1: {
+              tmp$ret$2 = tmp3_get_0;
+              break $l$block_1;
+            }
+            tmp$ret$3 = tmp$ret$2['feed_url_override'];
+            break $l$block_2;
+          }
+          var tmp0_elvis_lhs = tmp$ret$3;
+          tmp = tmp0_elvis_lhs == null ? 'https://orllewin.uk/orllewin_stations.json' : tmp0_elvis_lhs;
         }
       }
       var feedQuery = tmp;
       Unit_getInstance();
-      var tmp_2;
-      var tmp$ret$2;
-      $l$block_1: {
-        tmp$ret$2 = charSequenceLength(feedQuery) === 0;
-        break $l$block_1;
+      var backButton = document.getElementById('back_button');
+      Unit_getInstance();
+      var settingsLayout = document.getElementById('settings');
+      Unit_getInstance();
+      var settingsButton = document.getElementById('settings_button');
+      Unit_getInstance();
+      var saveUrlButton = document.getElementById('save_url_button');
+      Unit_getInstance();
+      var tmp_2 = document.getElementById('url_input');
+      var urlTextArea = tmp_2 instanceof HTMLInputElement ? tmp_2 : THROW_CCE();
+      Unit_getInstance();
+      var tmp1_safe_receiver = settingsButton;
+      if (tmp1_safe_receiver == null)
+        null;
+      else {
+        tmp1_safe_receiver.addEventListener('click', main$lambda$lambda(backButton, settingsLayout, settingsButton, urlTextArea));
+        Unit_getInstance();
       }
-      if (tmp$ret$2) {
-        tmp_2 = getFeed('https://orllewin.uk/default_stations.json', main$lambda$lambda());
+      Unit_getInstance();
+      var tmp2_safe_receiver = saveUrlButton;
+      if (tmp2_safe_receiver == null)
+        null;
+      else {
+        tmp2_safe_receiver.addEventListener('click', main$lambda$lambda_0(urlTextArea));
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      var tmp3_safe_receiver = backButton;
+      if (tmp3_safe_receiver == null)
+        null;
+      else {
+        tmp3_safe_receiver.addEventListener('click', main$lambda$lambda_1(backButton, settingsLayout, settingsButton));
+        Unit_getInstance();
+      }
+      Unit_getInstance();
+      var tmp_3;
+      var tmp$ret$4;
+      $l$block_3: {
+        tmp$ret$4 = charSequenceLength(feedQuery) === 0;
+        break $l$block_3;
+      }
+      if (tmp$ret$4) {
+        tmp_3 = getFeed('https://orllewin.uk/orllewin_stations.json', main$lambda$lambda_2());
       } else {
         {
-          tmp_2 = getFeed(feedQuery, main$lambda$lambda_0());
+          tmp_3 = getFeed(feedQuery, main$lambda$lambda_3());
         }
       }
       return Unit_getInstance();
@@ -662,12 +720,12 @@
   function playStation$lambda_0($station) {
     return function (it) {
       var tmp = window;
-      var tmp0_elvis_lhs_10 = $station.website_1;
-      var tmp1_safe_receiver_9 = tmp.open(tmp0_elvis_lhs_10 == null ? '' : tmp0_elvis_lhs_10, '_blank');
-      if (tmp1_safe_receiver_9 == null)
+      var tmp0_elvis_lhs_13 = $station.website_1;
+      var tmp1_safe_receiver_12 = tmp.open(tmp0_elvis_lhs_13 == null ? '' : tmp0_elvis_lhs_13, '_blank');
+      if (tmp1_safe_receiver_12 == null)
         null;
       else {
-        tmp1_safe_receiver_9.focus();
+        tmp1_safe_receiver_12.focus();
         Unit_getInstance();
       }
       Unit_getInstance();
@@ -678,11 +736,11 @@
     return function (it) {
       _get_audio__3100431035().pause();
       _get_audio__3100431035().src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
-      var tmp0_safe_receiver_14 = $controls_3;
-      if (tmp0_safe_receiver_14 == null)
+      var tmp0_safe_receiver_17 = $controls_3;
+      if (tmp0_safe_receiver_17 == null)
         null;
       else {
-        tmp0_safe_receiver_14.setAttribute('style', 'display: none;');
+        tmp0_safe_receiver_17.setAttribute('style', 'display: none;');
         Unit_getInstance();
       }
       Unit_getInstance();
@@ -708,9 +766,6 @@
   //region block: post-declaration
   $serializer.prototype.typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   $serializer_0.prototype.typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  //endregion
-  //region block: init
-  JS_METADATA = "if (\"mediaSession\" in navigator) {\n                navigator.mediaSession.metadata = new MediaMetadata({\n                    title: %%title,\n                    artwork: [\n                      { src: %%arturl, sizes: '96x96',   type: 'image/png' },\n                      { src: %%arturl, sizes: '128x128', type: 'image/png' },\n                      { src: %%arturl, sizes: '192x192', type: 'image/png' },\n                      { src: %%arturl, sizes: '256x256', type: 'image/png' },\n                      { src: %%arturl, sizes: '384x384', type: 'image/png' },\n                      { src: %%arturl, sizes: '512x512', type: 'image/png' },\n                    ]\n                });\n            }";
   //endregion
   main();
   return _;

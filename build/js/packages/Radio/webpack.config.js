@@ -1,5 +1,5 @@
 let config = {
-  mode: 'development',
+  mode: 'production',
   resolve: {
     modules: [
       "node_modules"
@@ -34,16 +34,8 @@ config.module.rules.push({
         use: ["source-map-loader"],
         enforce: "pre"
 });
-config.devtool = 'eval-source-map';
+config.devtool = 'source-map';
 config.ignoreWarnings = [/Failed to parse source map/]
-
-// dev server
-config.devServer = {
-  "open": true,
-  "static": [
-    "/Users/fish/orllewin/radio/build/processedResources/js/main"
-  ]
-};
 
 // Report progress to console
 // noinspection JSUnnecessarySemicolon

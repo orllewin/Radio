@@ -4,7 +4,7 @@
   "dir": "ltr",
   "display": "standalone",
   "name": "Radio",
-  "start_url": "https://orllewin.github.io/radio2/",
+  "start_url": "https://orllewin.github.io/radio/",
   "orientation": "portrait",
   "short_name": "Radio",
   "theme_color": "#f5f2f0",

@@ -20684,6 +20684,14 @@
       REPLACEMENT_BYTE_SEQUENCE = tmp$ret$0;
     }
   }
+  function get_3(_this__1828080292, key) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _this__1828080292;
+      break $l$block;
+    }
+    return tmp$ret$0[key];
+  }
   function _Char___init__impl__380027157(value) {
     return value;
   }

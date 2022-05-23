@@ -1,5 +1,5 @@
 {
-  mode: 'development',
+  mode: 'production',
   resolve: {
     modules: [
       'node_modules'
@@ -55,16 +55,10 @@
     libraryTarget: 'umd',
     globalObject: 'this'
   },
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   ignoreWarnings: [
     /Failed to parse source map/
   ],
-  devServer: {
-    open: true,
-    static: [
-      '/Users/fish/orllewin/radio/build/processedResources/js/main'
-    ]
-  },
   stats: {
     warnings: false,
     errors: false
