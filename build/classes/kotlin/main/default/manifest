@@ -1,0 +1,8 @@
+builtins_platform=JS
+unique_name=orllewin\:Radio
+compiler_version=1.6.21
+depends=org.jetbrains.kotlinx\:kotlinx-html org.jetbrains.kotlinx\:kotlinx-serialization-json org.jetbrains.kotlinx\:kotlinx-serialization-core kotlin
+jsOutputName=Radio
+abi_version=1.6.0
+metadata_version=1.4.1
+ir_version=1.0.0
