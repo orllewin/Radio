@@ -324,11 +324,12 @@
   };
   function $serializer_0() {
     $serializer_instance_0 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('Station', this, 4);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('Station', this, 5);
     tmp0_serialDesc.addElement_ifop3j_k$('title', false);
     tmp0_serialDesc.addElement_ifop3j_k$('website', false);
     tmp0_serialDesc.addElement_ifop3j_k$('streamUrl', false);
     tmp0_serialDesc.addElement_ifop3j_k$('logoUrl', false);
+    tmp0_serialDesc.addElement_ifop3j_k$('colour', false);
     this.descriptor_1 = tmp0_serialDesc;
   }
   $serializer_0.prototype._get_descriptor__684124924_bbb664_k$ = function () {
@@ -337,7 +338,7 @@
   $serializer_0.prototype.childSerializers_5ghqw5_k$ = function () {
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0_arrayOf_0 = [_get_nullable__2526391434(StringSerializer_getInstance()), _get_nullable__2526391434(StringSerializer_getInstance()), _get_nullable__2526391434(StringSerializer_getInstance()), _get_nullable__2526391434(StringSerializer_getInstance())];
+      var tmp0_arrayOf_0 = [_get_nullable__2526391434(StringSerializer_getInstance()), _get_nullable__2526391434(StringSerializer_getInstance()), _get_nullable__2526391434(StringSerializer_getInstance()), _get_nullable__2526391434(StringSerializer_getInstance()), _get_nullable__2526391434(StringSerializer_getInstance())];
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -362,45 +363,52 @@
     var tmp5_local1 = null;
     var tmp6_local2 = null;
     var tmp7_local3 = null;
-    var tmp8_input = decoder.beginStructure_dv3yt3_k$(tmp0_desc);
-    if (tmp8_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp8_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 0, StringSerializer_getInstance(), tmp4_local0);
+    var tmp8_local4 = null;
+    var tmp9_input = decoder.beginStructure_dv3yt3_k$(tmp0_desc);
+    if (tmp9_input.decodeSequentially_xlblqy_k$()) {
+      tmp4_local0 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 0, StringSerializer_getInstance(), tmp4_local0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp8_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 1, StringSerializer_getInstance(), tmp5_local1);
+      tmp5_local1 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 1, StringSerializer_getInstance(), tmp5_local1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp8_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 2, StringSerializer_getInstance(), tmp6_local2);
+      tmp6_local2 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 2, StringSerializer_getInstance(), tmp6_local2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp8_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
+      tmp7_local3 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
+      tmp8_local4 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 4, StringSerializer_getInstance(), tmp8_local4);
+      tmp3_bitMask0 = tmp3_bitMask0 | 16;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp8_input.decodeElementIndex_nk5a2l_k$(tmp0_desc);
+        tmp2_index = tmp9_input.decodeElementIndex_nk5a2l_k$(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp8_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 0, StringSerializer_getInstance(), tmp4_local0);
+            tmp4_local0 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 0, StringSerializer_getInstance(), tmp4_local0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp8_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 1, StringSerializer_getInstance(), tmp5_local1);
+            tmp5_local1 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 1, StringSerializer_getInstance(), tmp5_local1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp8_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 2, StringSerializer_getInstance(), tmp6_local2);
+            tmp6_local2 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 2, StringSerializer_getInstance(), tmp6_local2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp8_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
+            tmp7_local3 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
+            break;
+          case 4:
+            tmp8_local4 = tmp9_input.decodeNullableSerializableElement_ri3t5d_k$(tmp0_desc, 4, StringSerializer_getInstance(), tmp8_local4);
+            tmp3_bitMask0 = tmp3_bitMask0 | 16;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp8_input.endStructure_e64gd4_k$(tmp0_desc);
-    return Station_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
+    tmp9_input.endStructure_e64gd4_k$(tmp0_desc);
+    return Station_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
   };
   $serializer_0.$metadata$ = {
     simpleName: '$serializer',
@@ -413,28 +421,30 @@
       new $serializer_0();
     return $serializer_instance_0;
   }
-  function Station_init_$Init$(seen1, title, website, streamUrl, logoUrl, serializationConstructorMarker, $this) {
-    if (!(15 === (15 & seen1)))
-      throwMissingFieldException(seen1, 15, $serializer_getInstance_0().descriptor_1);
+  function Station_init_$Init$(seen1, title, website, streamUrl, logoUrl, colour, serializationConstructorMarker, $this) {
+    if (!(31 === (31 & seen1)))
+      throwMissingFieldException(seen1, 31, $serializer_getInstance_0().descriptor_1);
     $this.title_1 = title;
     $this.website_1 = website;
     $this.streamUrl_1 = streamUrl;
     $this.logoUrl_1 = logoUrl;
+    $this.colour_1 = colour;
     return $this;
   }
-  function Station_init_$Create$(seen1, title, website, streamUrl, logoUrl, serializationConstructorMarker) {
-    return Station_init_$Init$(seen1, title, website, streamUrl, logoUrl, serializationConstructorMarker, Object.create(Station.prototype));
+  function Station_init_$Create$(seen1, title, website, streamUrl, logoUrl, colour, serializationConstructorMarker) {
+    return Station_init_$Init$(seen1, title, website, streamUrl, logoUrl, colour, serializationConstructorMarker, Object.create(Station.prototype));
   }
   function Station() {
   }
   Station.prototype.toString = function () {
-    return 'Station(title=' + this.title_1 + ', website=' + this.website_1 + ', streamUrl=' + this.streamUrl_1 + ', logoUrl=' + this.logoUrl_1 + ')';
+    return 'Station(title=' + this.title_1 + ', website=' + this.website_1 + ', streamUrl=' + this.streamUrl_1 + ', logoUrl=' + this.logoUrl_1 + ', colour=' + this.colour_1 + ')';
   };
   Station.prototype.hashCode = function () {
     var result = this.title_1 == null ? 0 : getStringHashCode(this.title_1);
     result = imul(result, 31) + (this.website_1 == null ? 0 : getStringHashCode(this.website_1)) | 0;
     result = imul(result, 31) + (this.streamUrl_1 == null ? 0 : getStringHashCode(this.streamUrl_1)) | 0;
     result = imul(result, 31) + (this.logoUrl_1 == null ? 0 : getStringHashCode(this.logoUrl_1)) | 0;
+    result = imul(result, 31) + (this.colour_1 == null ? 0 : getStringHashCode(this.colour_1)) | 0;
     return result;
   };
   Station.prototype.equals = function (other) {
@@ -452,6 +462,8 @@
     if (!(this.streamUrl_1 == tmp0_other_with_cast.streamUrl_1))
       return false;
     if (!(this.logoUrl_1 == tmp0_other_with_cast.logoUrl_1))
+      return false;
+    if (!(this.colour_1 == tmp0_other_with_cast.colour_1))
       return false;
     return true;
   };

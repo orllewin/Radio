@@ -157,4 +157,4 @@ fun getFeed(url: String, onFeed: (String) -> Unit) {
 data class Stations(val stations: List<Station>)
 
 @Serializable
-data class Station(val title: String?, val website: String?, val streamUrl: String?, val logoUrl: String?)
+data class Station(val title: String?, val website: String?, val streamUrl: String?, val logoUrl: String?, val colour: String?)
