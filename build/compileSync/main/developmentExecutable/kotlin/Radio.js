@@ -48,12 +48,12 @@
   var charSequenceLength = kotlin_kotlin.$crossModule$.charSequenceLength;
   var _set_style__1257298356 = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$._set_style__1257298356;
   var _set_onClickFunction__3534137028 = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$._set_onClickFunction__3534137028;
-  var _get_classes__2818451371 = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$._get_classes__2818451371;
-  var plus = kotlin_kotlin.$crossModule$.plus_1;
-  var _set_classes__72476703 = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$._set_classes__72476703;
   var attributesMapOf = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$.attributesMapOf;
   var IMG = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$.IMG;
   var visitTag = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$.visitTag;
+  var _get_classes__2818451371 = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$._get_classes__2818451371;
+  var plus = kotlin_kotlin.$crossModule$.plus_1;
+  var _set_classes__72476703 = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$._set_classes__72476703;
   var attributesMapOf_0 = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$.attributesMapOf_1;
   var DIV = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$.DIV;
   var visitTagAndFinalize = kotlin_org_jetbrains_kotlinx_kotlinx_html.$crossModule$.visitTagAndFinalize;
@@ -729,7 +729,7 @@
             break $l$block_2;
           }
           var tmp0_elvis_lhs = tmp$ret$3;
-          tmp = tmp0_elvis_lhs == null ? 'https://orllewin.uk/orllewin_stations.json' : tmp0_elvis_lhs;
+          tmp = tmp0_elvis_lhs == null ? 'https://orllewin.uk/stations.json' : tmp0_elvis_lhs;
         }
       }
       var feedQuery = tmp;
@@ -787,26 +787,24 @@
       return Unit_getInstance();
     };
   }
-  function addStations$lambda$lambda$lambda($element_2) {
+  function addStations$lambda$lambda$lambda$lambda($element_2) {
     return function (it) {
       playStation($element_2);
       return Unit_getInstance();
     };
   }
-  function addStations$lambda$lambda$lambda_0($tmp1_safe_receiver_7_10) {
+  function addStations$lambda$lambda$lambda$lambda_0($tmp0_safe_receiver_6_9_12) {
     return function (_this__1828080292) {
-      _set_style__1257298356(_this__1828080292, 'width: 100%;height: auto;');
-      _this__1828080292._set_src__296277409_u0oimn_k$($tmp1_safe_receiver_7_10);
+      _set_style__1257298356(_this__1828080292, 'width: 100%;height: auto;border-radius: 50%;');
+      _this__1828080292._set_src__296277409_u0oimn_k$($tmp0_safe_receiver_6_9_12);
       return Unit_getInstance();
     };
   }
-  function addStations$lambda$lambda($element_2) {
+  function addStations$lambda$lambda$lambda($element_2) {
     return function (_this__1828080292) {
-      _set_onClickFunction__3534137028(_this__1828080292, addStations$lambda$lambda$lambda($element_2));
-      var tmp0_receiver_6_9 = _this__1828080292;
-      _set_classes__72476703(tmp0_receiver_6_9, plus(_get_classes__2818451371(tmp0_receiver_6_9), 'station'));
-      var tmp1_safe_receiver_7_10 = $element_2.logoUrl_1;
-      if (tmp1_safe_receiver_7_10 == null)
+      _set_onClickFunction__3534137028(_this__1828080292, addStations$lambda$lambda$lambda$lambda($element_2));
+      var tmp0_safe_receiver_6_9_12 = $element_2.logoUrl_1;
+      if (tmp0_safe_receiver_6_9_12 == null)
         null;
       else {
         var tmp$ret$2;
@@ -817,8 +815,8 @@
           $l$block_0: {
             var tmp$ret$0;
             $l$block: {
-              var tmp0_visit_0_2_2_8_11 = new IMG(attributesMapOf(['alt', null, 'src', null, 'class', null]), _this__1828080292._get_consumer__1060829845_hjl9jp_k$());
-              tmp$ret$0 = visitTag(tmp0_visit_0_2_2_8_11, addStations$lambda$lambda$lambda_0(tmp1_safe_receiver_7_10));
+              var tmp0_visit_0_2_2_7_10_13 = new IMG(attributesMapOf(['alt', null, 'src', null, 'class', null]), _this__1828080292._get_consumer__1060829845_hjl9jp_k$());
+              tmp$ret$0 = visitTag(tmp0_visit_0_2_2_7_10_13, addStations$lambda$lambda$lambda$lambda_0(tmp0_safe_receiver_6_9_12));
               break $l$block;
             }
             tmp$ret$1 = tmp$ret$0;
@@ -830,6 +828,25 @@
         Unit_getInstance();
       }
       Unit_getInstance();
+      return Unit_getInstance();
+    };
+  }
+  function addStations$lambda$lambda($element_2) {
+    return function (_this__1828080292) {
+      var tmp0_receiver_5_8 = _this__1828080292;
+      _set_classes__72476703(tmp0_receiver_5_8, plus(_get_classes__2818451371(tmp0_receiver_5_8), 'station'));
+      _set_style__1257298356(_this__1828080292, 'padding: 12px;background: ' + $element_2.colour_1 + ';');
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp$ret$0;
+        $l$block: {
+          var tmp0_visit_0_2_6_9 = new DIV(attributesMapOf_0('class', null), _this__1828080292._get_consumer__1060829845_hjl9jp_k$());
+          tmp$ret$0 = visitTag(tmp0_visit_0_2_6_9, addStations$lambda$lambda$lambda($element_2));
+          break $l$block;
+        }
+        tmp$ret$1 = tmp$ret$0;
+        break $l$block_0;
+      }
       return Unit_getInstance();
     };
   }

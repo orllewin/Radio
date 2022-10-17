@@ -3626,6 +3626,15 @@
     kind: 'interface',
     interfaces: [CommonAttributeGroupFacade, PhrasingContent]
   };
+  function div_0(_this__1828080292, classes, block) {
+    var tmp$ret$0;
+    $l$block: {
+      var tmp0_visit_0 = new DIV(attributesMapOf('class', classes), _this__1828080292._get_consumer__1060829845_hjl9jp_k$());
+      tmp$ret$0 = visitTag(tmp0_visit_0, div$lambda_2(block));
+      break $l$block;
+    }
+    return tmp$ret$0;
+  }
   function FlowContent() {
   }
   FlowContent.$metadata$ = {
@@ -3647,6 +3656,17 @@
     kind: 'interface',
     interfaces: [FlowOrPhrasingContent, FlowOrPhrasingOrMetaDataContent, FlowOrInteractiveOrPhrasingContent, Tag]
   };
+  function div$lambda_1() {
+    return function (_this__1828080292) {
+      return Unit_getInstance();
+    };
+  }
+  function div$lambda_2($block) {
+    return function (_this__1828080292) {
+      $block(_this__1828080292);
+      return Unit_getInstance();
+    };
+  }
   function img(_this__1828080292, alt, src, classes, block) {
     var tmp$ret$0;
     $l$block: {
@@ -3656,13 +3676,6 @@
     }
     return tmp$ret$0;
   }
-  function FlowOrInteractiveOrPhrasingContent() {
-  }
-  FlowOrInteractiveOrPhrasingContent.$metadata$ = {
-    simpleName: 'FlowOrInteractiveOrPhrasingContent',
-    kind: 'interface',
-    interfaces: [Tag]
-  };
   function FlowOrHeadingContent() {
   }
   FlowOrHeadingContent.$metadata$ = {
@@ -3702,6 +3715,13 @@
   }
   SectioningOrFlowContent.$metadata$ = {
     simpleName: 'SectioningOrFlowContent',
+    kind: 'interface',
+    interfaces: [Tag]
+  };
+  function FlowOrInteractiveOrPhrasingContent() {
+  }
+  FlowOrInteractiveOrPhrasingContent.$metadata$ = {
+    simpleName: 'FlowOrInteractiveOrPhrasingContent',
     kind: 'interface',
     interfaces: [Tag]
   };

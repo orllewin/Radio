@@ -2163,13 +2163,6 @@
     kind: 'interface',
     interfaces: [FlowOrPhrasingContent, FlowOrPhrasingOrMetaDataContent, FlowOrInteractiveOrPhrasingContent, Tag]
   };
-  function FlowOrInteractiveOrPhrasingContent() {
-  }
-  FlowOrInteractiveOrPhrasingContent.$metadata$ = {
-    simpleName: 'FlowOrInteractiveOrPhrasingContent',
-    kind: 'interface',
-    interfaces: [Tag]
-  };
   function FlowOrHeadingContent() {
   }
   FlowOrHeadingContent.$metadata$ = {
@@ -2209,6 +2202,13 @@
   }
   SectioningOrFlowContent.$metadata$ = {
     simpleName: 'SectioningOrFlowContent',
+    kind: 'interface',
+    interfaces: [Tag]
+  };
+  function FlowOrInteractiveOrPhrasingContent() {
+  }
+  FlowOrInteractiveOrPhrasingContent.$metadata$ = {
+    simpleName: 'FlowOrInteractiveOrPhrasingContent',
     kind: 'interface',
     interfaces: [Tag]
   };

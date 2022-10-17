@@ -19,7 +19,7 @@ fun main() {
         println("document.documentURI: ${document.documentURI}")
         val feedQuery = when {
             document.documentURI.contains("?") -> document.documentURI.substring(document.documentURI.indexOf("?") + 1, document.documentURI.length)
-            else -> window.localStorage["feed_url_override"] ?:  "https://orllewin.uk/orllewin_stations.json"
+            else -> window.localStorage["feed_url_override"] ?:  "https://orllewin.uk/stations.json"
         }
 
         val grid = document.getElementById("grid_holder")
@@ -85,17 +85,23 @@ fun addStations(rawFeed: String) {
     stations.stations.forEach { station ->
         gridHolder?.append {
             div {
-                onClickFunction = {
-                    playStation(station)
-                }
                 this.classes += "station"
+                style = "padding: 12px;background: " + station.colour + ";"
+                div{
+                    onClickFunction = {
+                        playStation(station)
+                    }
 
-                station.logoUrl?.let { url ->
-                    img {
-                        style = "width: 100%;height: auto;"
-                        src = url
+
+                    station.logoUrl?.let { url ->
+                        img {
+
+                            style = "width: 100%;height: auto;border-radius: 50%;"
+                            src = url
+                        }
                     }
                 }
+
             }
         }
     }
