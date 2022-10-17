@@ -25,7 +25,7 @@
   var getKClass = kotlin_kotlin.$crossModule$.getKClass;
   var arrayOf = kotlin_kotlin.$crossModule$.arrayOf;
   var createKType = kotlin_kotlin.$crossModule$.createKType;
-  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.serializer_1;
+  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.serializer_5;
   var THROW_CCE = kotlin_kotlin.$crossModule$.THROW_CCE;
   var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$crossModule$.KSerializer;
   var isInterface = kotlin_kotlin.$crossModule$.isInterface;
@@ -207,6 +207,9 @@
   function Companion() {
     Companion_instance = this;
   }
+  Companion.prototype.serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance();
+  };
   Companion.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
@@ -274,6 +277,15 @@
     tmp5_input.endStructure_e64gd4_k$(tmp0_desc);
     return Stations_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
+  $serializer.prototype.serialize_meargo_k$ = function (encoder, value) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_output = encoder.beginStructure_dv3yt3_k$(tmp0_desc);
+    tmp1_output.encodeSerializableElement_pr92am_k$(tmp0_desc, 0, new ArrayListSerializer($serializer_getInstance_0()), value.stations_1);
+    tmp1_output.endStructure_e64gd4_k$(tmp0_desc);
+  };
+  $serializer.prototype.serialize_32qylj_k$ = function (encoder, value) {
+    return this.serialize_meargo_k$(encoder, value instanceof Stations ? value : THROW_CCE());
+  };
   $serializer.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -298,6 +310,20 @@
     Companion_getInstance();
     this.stations_1 = stations;
   }
+  Stations.prototype._get_stations__3695415788_9wygwk_k$ = function () {
+    return this.stations_1;
+  };
+  Stations.prototype.component1_7eebsc_k$ = function () {
+    return this.stations_1;
+  };
+  Stations.prototype.copy_mch1rg_k$ = function (stations) {
+    return new Stations(stations);
+  };
+  Stations.prototype.copy$default_jhmxzw_k$ = function (stations, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      stations = this.stations_1;
+    return this.copy_mch1rg_k$(stations);
+  };
   Stations.prototype.toString = function () {
     return 'Stations(stations=' + this.stations_1 + ')';
   };
@@ -322,6 +348,23 @@
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance}
   };
+  function Companion_0() {
+    Companion_instance_0 = this;
+  }
+  Companion_0.prototype.serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_0();
+  };
+  Companion_0.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_0;
+  function Companion_getInstance_0() {
+    if (Companion_instance_0 == null)
+      new Companion_0();
+    return Companion_instance_0;
+  }
   function $serializer_0() {
     $serializer_instance_0 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('Station', this, 5);
@@ -410,6 +453,19 @@
     tmp9_input.endStructure_e64gd4_k$(tmp0_desc);
     return Station_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
   };
+  $serializer_0.prototype.serialize_av9ftz_k$ = function (encoder, value) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_output = encoder.beginStructure_dv3yt3_k$(tmp0_desc);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 0, StringSerializer_getInstance(), value.title_1);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 1, StringSerializer_getInstance(), value.website_1);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 2, StringSerializer_getInstance(), value.streamUrl_1);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 3, StringSerializer_getInstance(), value.logoUrl_1);
+    tmp1_output.encodeNullableSerializableElement_m9ow0w_k$(tmp0_desc, 4, StringSerializer_getInstance(), value.colour_1);
+    tmp1_output.endStructure_e64gd4_k$(tmp0_desc);
+  };
+  $serializer_0.prototype.serialize_32qylj_k$ = function (encoder, value) {
+    return this.serialize_av9ftz_k$(encoder, value instanceof Station ? value : THROW_CCE());
+  };
   $serializer_0.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -434,8 +490,60 @@
   function Station_init_$Create$(seen1, title, website, streamUrl, logoUrl, colour, serializationConstructorMarker) {
     return Station_init_$Init$(seen1, title, website, streamUrl, logoUrl, colour, serializationConstructorMarker, Object.create(Station.prototype));
   }
-  function Station() {
+  function Station(title, website, streamUrl, logoUrl, colour) {
+    Companion_getInstance_0();
+    this.title_1 = title;
+    this.website_1 = website;
+    this.streamUrl_1 = streamUrl;
+    this.logoUrl_1 = logoUrl;
+    this.colour_1 = colour;
   }
+  Station.prototype._get_title__3633781881_axnhxj_k$ = function () {
+    return this.title_1;
+  };
+  Station.prototype._get_website__1425706454_nktu52_k$ = function () {
+    return this.website_1;
+  };
+  Station.prototype._get_streamUrl__1792466530_tn6s0y_k$ = function () {
+    return this.streamUrl_1;
+  };
+  Station.prototype._get_logoUrl__4153585613_2c6asz_k$ = function () {
+    return this.logoUrl_1;
+  };
+  Station.prototype._get_colour__3234888383_hj564h_k$ = function () {
+    return this.colour_1;
+  };
+  Station.prototype.component1_7eebsc_k$ = function () {
+    return this.title_1;
+  };
+  Station.prototype.component2_7eebsb_k$ = function () {
+    return this.website_1;
+  };
+  Station.prototype.component3_7eebsa_k$ = function () {
+    return this.streamUrl_1;
+  };
+  Station.prototype.component4_7eebs9_k$ = function () {
+    return this.logoUrl_1;
+  };
+  Station.prototype.component5_7eebs8_k$ = function () {
+    return this.colour_1;
+  };
+  Station.prototype.copy_ld32j_k$ = function (title, website, streamUrl, logoUrl, colour) {
+    return new Station(title, website, streamUrl, logoUrl, colour);
+  };
+  Station.prototype.copy$default_1k7kc_k$ = function (title, website, streamUrl, logoUrl, colour, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      title = this.title_1;
+    if (!(($mask0 & 2) === 0))
+      website = this.website_1;
+    if (!(($mask0 & 4) === 0))
+      streamUrl = this.streamUrl_1;
+    if (!(($mask0 & 8) === 0))
+      logoUrl = this.logoUrl_1;
+    if (!(($mask0 & 16) === 0))
+      colour = this.colour_1;
+    return this.copy_ld32j_k$(title, website, streamUrl, logoUrl, colour);
+  };
   Station.prototype.toString = function () {
     return 'Station(title=' + this.title_1 + ', website=' + this.website_1 + ', streamUrl=' + this.streamUrl_1 + ', logoUrl=' + this.logoUrl_1 + ', colour=' + this.colour_1 + ')';
   };

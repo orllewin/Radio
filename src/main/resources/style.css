@@ -4,8 +4,8 @@
 }
 
 body{
-    background: #f5f2f0;
-    font-family: monospace;
+    background: #F4EFF2;
+    font-family: sans-serif;
     position: relative;
     overflow-x: hidden;
     max-width: 100%;
@@ -15,8 +15,8 @@ body{
 header{
     display: flex;
     position: relative;
-    background: #e1e0d4;
-    height: 150px;
+    background: #EBDDC3;
+    height: 72px;
     align-items: center;
     padding-left: 24px;
     padding-right: 6px;
@@ -40,17 +40,10 @@ header{
     height: 22px;
 }
 
-#github_link{
-    margin-left: auto;
-    padding-right: 8px;
-}
-
-#github_icon{
-    height: 22px;
-    width: auto;
-}
 
 #settings_button{
+    margin-left: auto;
+    padding-right: 8px;
     border: none;
     background-color: #ffeeee00;
     cursor: pointer;
@@ -87,6 +80,7 @@ section#grid_holder {
     border-radius: 6px;
     background: #ffffff;
     padding: 8px;
+    cursor: pointer;
 }
 
 #controls{
@@ -142,6 +136,7 @@ section#grid_holder {
 
 .website_button{
     background: #ffffff;
+    cursor: pointer;
 }
 @media (orientation: portrait) {
 
@@ -150,11 +145,6 @@ section#grid_holder {
     }
     section#grid_holder {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-
-    .station {
-        padding-top: 48px;
-        padding-bottom: 48px;
     }
 
     #now_playing_icon{
@@ -191,9 +181,4 @@ section#grid_holder {
         margin-left: 6px;
         margin-right: 0px;
     }
-
-    #github_link{
-        visibility: hidden;
-    }
-
 }

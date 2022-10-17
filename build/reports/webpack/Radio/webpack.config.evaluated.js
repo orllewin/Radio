@@ -1,5 +1,5 @@
 {
-  mode: 'production',
+  mode: 'development',
   resolve: {
     modules: [
       'node_modules'
@@ -45,20 +45,26 @@
   },
   entry: {
     main: [
-      '/Users/fish/orllewin/radio/build/js/packages/Radio/kotlin/Radio.js'
+      '/Users/orllewin/projects/radio/radio_web/build/js/packages/Radio/kotlin/Radio.js'
     ]
   },
   output: {
-    path: '/Users/fish/orllewin/radio/build/distributions',
+    path: '/Users/orllewin/projects/radio/radio_web/build/distributions',
     filename: [Function: filename],
     library: 'Radio',
     libraryTarget: 'umd',
     globalObject: 'this'
   },
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   ignoreWarnings: [
     /Failed to parse source map/
   ],
+  devServer: {
+    open: true,
+    static: [
+      '/Users/orllewin/projects/radio/radio_web/build/processedResources/js/main'
+    ]
+  },
   stats: {
     warnings: false,
     errors: false

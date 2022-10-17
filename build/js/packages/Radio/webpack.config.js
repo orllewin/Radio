@@ -1,5 +1,5 @@
 let config = {
-  mode: 'production',
+  mode: 'development',
   resolve: {
     modules: [
       "node_modules"
@@ -13,11 +13,11 @@ let config = {
 
 // entry
 config.entry = {
-    main: ["/Users/fish/orllewin/radio/build/js/packages/Radio/kotlin/Radio.js"]
+    main: ["/Users/orllewin/projects/radio/radio_web/build/js/packages/Radio/kotlin/Radio.js"]
 };
 
 config.output = {
-    path: "/Users/fish/orllewin/radio/build/distributions",
+    path: "/Users/orllewin/projects/radio/radio_web/build/distributions",
     filename: (chunkData) => {
         return chunkData.chunk.name === 'main'
             ? "Radio.js"
@@ -34,8 +34,16 @@ config.module.rules.push({
         use: ["source-map-loader"],
         enforce: "pre"
 });
-config.devtool = 'source-map';
+config.devtool = 'eval-source-map';
 config.ignoreWarnings = [/Failed to parse source map/]
+
+// dev server
+config.devServer = {
+  "open": true,
+  "static": [
+    "/Users/orllewin/projects/radio/radio_web/build/processedResources/js/main"
+  ]
+};
 
 // Report progress to console
 // noinspection JSUnnecessarySemicolon
@@ -44,7 +52,7 @@ config.ignoreWarnings = [/Failed to parse source map/]
     const handler = (percentage, message, ...args) => {
         const p = percentage * 100;
         let msg = `${Math.trunc(p / 10)}${Math.trunc(p % 10)}% ${message} ${args.join(' ')}`;
-        msg = msg.replace("/Users/fish/orllewin/radio/build/js", '');;
+        msg = msg.replace("/Users/orllewin/projects/radio/radio_web/build/js", '');;
         console.log(msg);
     };
 
@@ -91,7 +99,7 @@ config.ignoreWarnings = [/Failed to parse source map/]
     const util = require('util');
     const fs = require('fs');
     const evaluatedConfig = util.inspect(config, {showHidden: false, depth: null, compact: false});
-    fs.writeFile("/Users/fish/orllewin/radio/build/reports/webpack/Radio/webpack.config.evaluated.js", evaluatedConfig, function (err) {});
+    fs.writeFile("/Users/orllewin/projects/radio/radio_web/build/reports/webpack/Radio/webpack.config.evaluated.js", evaluatedConfig, function (err) {});
 })(config);
 
 module.exports = config
