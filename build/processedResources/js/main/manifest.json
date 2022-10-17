@@ -1,5 +1,5 @@
 {
-  "background_color": "#f5f2f0",
+  "background_color": "#EBDDC3",
   "description": "a radio app",
   "dir": "ltr",
   "display": "standalone",
@@ -7,7 +7,7 @@
   "start_url": "https://orllewin.github.io/radio/",
   "orientation": "portrait",
   "short_name": "Radio",
-  "theme_color": "#f5f2f0",
+  "theme_color": "#EBDDC3",
   "categories": [],
   "screenshots": [],
   "shortcuts": [],

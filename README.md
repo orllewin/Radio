@@ -11,4 +11,5 @@ More details: [orllewin.github.io/android/radio/](https://orllewin.github.io/and
 * Click 'Add configuration', choose 'Gradle' and in the **run** field type 'browserRun'
 
 ## Links
-[googlechrome.github.io/samples/media-session/audio.html](https://googlechrome.github.io/samples/media-session/audio.html)
+* [Figma - Logo (private)](https://www.figma.com/file/046LN3aChjeFvscreEhJyL/Untitled?node-id=102%3A2)
+* [googlechrome.github.io/samples/media-session/audio.html](https://googlechrome.github.io/samples/media-session/audio.html)
