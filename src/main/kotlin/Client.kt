@@ -92,7 +92,6 @@ fun addStations(rawFeed: String) {
                         playStation(station)
                     }
 
-
                     station.logoUrl?.let { url ->
                         img {
 
@@ -101,7 +100,6 @@ fun addStations(rawFeed: String) {
                         }
                     }
                 }
-
             }
         }
     }
@@ -131,11 +129,16 @@ fun playStation(station: Station) {
 
         val websiteButton = document.getElementById("website_button")
         websiteButton?.innerHTML = "${station.title}"
+        websiteButton?.setAttribute("style", "background: ${station.colour};")
         websiteButton?.addEventListener("click", {
             window.open(station.website ?: "", "_blank")?.focus()
         })
 
         val stopButton = document.getElementById("stop_button")
+        val style = stopButton?.getAttribute("style")
+
+        console.log("style: $style")
+
         stopButton?.addEventListener("click", {
             audio.pause()
             audio.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA"
